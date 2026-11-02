@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 224" fill="none" role="img" aria-label="RETX — Real Estate Transaction Exchange">
+  <!-- R (Deep Forest #2F3C2A with RETX signature architectural open-loop cut) -->
+  <path fill="#2F3C2A" d="M0 1H176C225 1 251 28 251 75C251 116 230 140 186 145L245 223H165L100 146H55V223H0V100H170C187 100 194 90 194 75C194 60 187 51 170 51H0V1Z"/>
+  <!-- E (Sage-Olive #4F5B46) -->
+  <path fill="#4F5B46" d="M265 1H484V50H323V87H466V135H323V174H487V223H265V1Z"/>
+  <!-- T (Sage-Olive #4F5B46, mitered at 45° to meet the X exchange ribbon) -->
+  <path fill="#4F5B46" d="M496 1H695L742 50H633V223H577V50H496V1Z"/>
+  <!-- X Upper-Left Exchange Ribbon (Burnished Copper #C88364) -->
+  <path fill="#C88364" d="M695 1H765C777 1 785 5 793 14L886 114H802L695 1Z"/>
+  <!-- X Upper-Right Counter-Axis (Deep Forest #2F3C2A) -->
+  <path fill="#2F3C2A" d="M920 1H999L891.5 108.5L852 68L920 1Z"/>
+  <!-- X Lower Structural Base (Deep Forest #2F3C2A) -->
+  <path fill="#2F3C2A" d="M802 114H886L992 223H914L844.5 150L770 223H693L802 114Z"/>
+</svg>

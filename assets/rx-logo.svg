@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 903 568" fill="none" role="img" aria-label="RETX">
+  <!-- Upper-Right Sage Arm (#819B8D) -->
+  <path fill="#819B8D" d="M750 0H903L664 291L585 192L750 0Z"/>
+  <!-- Upper-Left Burnished Copper Exchange Ribbon (#BB7750) -->
+  <path fill="#BB7750" d="M260 0H388C420 0 444 14 468 44L664 291H515L390 124C348 68 312 18 260 0Z"/>
+  <!-- Deep Forest Emerald R + X Monogram (#103A27) -->
+  <path fill="#103A27" d="M1 0H260C312 18 348 68 390 124C406 148 413 172 413 196C413 258 372 306 296 318L390 449L515 291H664L882 568H716L589 401L460 568H328L152 320H112V568H1V214H278C304 214 318 194 318 169C318 144 304 124 278 124H1V0Z"/>
+</svg>

@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+@theme {
+  --color-studio: #d8dad9;
+  --color-alabaster: #f8f8f6;
+  --color-forest: #103a27;
+  --color-forest-deep: #0a271a;
+  --color-olive: #3d5245;
+  --color-sage-brand: #819b8d;
+  --color-sage-text: #4c5d53;
+  --color-copper: #bb7750;
+  --color-copper-deep: #9e5f3b;
+  --color-copper-light: #dfa27e;
+
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--color-studio);
+    color: var(--color-forest);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: rgba(187, 119, 80, 0.24);
+    color: #0a271a;
+  }
+}
+
+@keyframes softFadeDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes softDockUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes copperPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes eqBar {
+  0%, 100% {
+    transform: scaleY(0.32);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.anim-top {
+  animation: softFadeDown 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.anim-dock {
+  animation: softDockUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+}
+
+.pulse-ring {
+  animation: copperPulse 2.5s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+.eq-bar {
+  transform-origin: center bottom;
+}
+
+/* Borderless See-Through Glass Card (Zero Outside Shadow — Subtle Inner Contour Only) */
+.embossed-glass-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.14) 55%,
+    rgba(246, 248, 246, 0.20) 100%
+  );
+  -webkit-backdrop-filter: blur(11px) saturate(165%);
+  backdrop-filter: blur(11px) saturate(165%);
+  border: 0;
+  box-shadow:
+    inset 0 -5px 10px -6px rgba(13, 40, 27, 0.06),
+    inset 6px -4px 10px -7px rgba(13, 40, 27, 0.045),
+    inset -6px -4px 10px -7px rgba(13, 40, 27, 0.045);
+}
+
+.liquid-glass-pill {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.24) 100%
+  );
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  backdrop-filter: blur(10px) saturate(160%);
+  border: 0;
+  box-shadow:
+    0 8px 18px -8px rgba(13, 40, 27, 0.11),
+    inset 0 -3px 8px -5px rgba(13, 40, 27, 0.05);
+}
+
+.glass-text-clarity {
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.55);
+}
+
+.is-unmuted .eq-bar-1 {
+  animation: eqBar 0.72s ease-in-out infinite;
+}
+.is-unmuted .eq-bar-2 {
+  animation: eqBar 0.54s ease-in-out 0.14s infinite;
+}
+.is-unmuted .eq-bar-3 {
+  animation: eqBar 0.84s ease-in-out 0.28s infinite;
+}
+.is-unmuted .eq-bar-4 {
+  animation: eqBar 0.62s ease-in-out 0.08s infinite;
+}
+
+/*
+ * Responsive Aspect-Ratio-Aware Fixed Video Stage:
+ * Ensures 100% of the RX reveal + taglines inside the 16:9 video are ALWAYS
+ * visible and unobstructed between the top bar and the fixed bottom card
+ * on Mobile, Portrait Tablet, Laptop, 1080p/4K Big Screens, and Ultrawides.
+ */
+.hero-bg-video {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100svh;
+  object-fit: cover;
+  object-position: 50% 56%;
+}
+
+/* Portrait & Narrow Screens (Phones & Portrait Tablets) */
+@media (max-aspect-ratio: 4/3) {
+  .hero-bg-video {
+    top: 40%;
+    width: min(132vw, 136svh);
+    height: auto;
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.45) 9%,
+      #000 22%,
+      #000 78%,
+      rgba(0, 0, 0, 0.45) 91%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.45) 9%,
+      #000 22%,
+      #000 78%,
+      rgba(0, 0, 0, 0.45) 91%,
+      transparent 100%
+    );
+  }
+}
+
+/* Standard 16:10 & 16:9 Laptops and Big Screens (1440x900, 1920x1080, 2560x1440): pure edge-to-edge */
+@media (min-aspect-ratio: 4/3) and (max-aspect-ratio: 19/10) {
+  .hero-bg-video {
+    top: 46%;
+    width: 100vw;
+    height: 104svh;
+    object-fit: cover;
+    object-position: 50% 54%;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* Ultrawide Big Screens (21:9, 2560x1080+): prevents vertical cropping so full RX + tagline stay visible */
+@media (min-aspect-ratio: 19/10) {
+  .hero-bg-video {
+    top: 44%;
+    height: 102svh;
+    width: auto;
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-top,
+  .anim-dock,
+  .pulse-ring,
+  .eq-bar {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
